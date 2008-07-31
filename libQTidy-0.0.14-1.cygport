@@ -1,0 +1,14 @@
+inherit qt4-qmake
+
+DESCRIPTION="Qt4 tidy library"
+HOMEPAGE="http://qtidy.hjcms.de/"
+SRC_URI="http://qtidy.hjcms.de/Downloads/${P}.tar.lzma"
+PATCH_URI="0.0.14-install-dirs.patch"
+
+abi=0
+PKG_NAMES="${PN} lib${PN}${abi} lib${PN}-devel qtidyrc"
+#PKG_HINTS="src dll devel bin"
+PKG_CONTENTS[0]=	# empty
+PKG_CONTENTS[1]="usr/bin/*-${abi}.dll ${QT4_QTDIR#/}/share/ usr/share/doc/"
+PKG_CONTENTS[2]="${QT4_INCLUDEDIR#/} ${QT4_LIBDIR#/} usr/lib/pkgconfig/"
+PKG_CONTENTS[3]="usr/bin/ usr/share/applications/ usr/share/pixmaps/"
