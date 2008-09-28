@@ -1,0 +1,14 @@
+--- origsrc/libQTidy-0.2.0/flags.pri	2008-09-26 08:28:08.000000000 -0500
++++ src/libQTidy-0.2.0/flags.pri	2008-09-28 01:06:27.496369400 -0500
+@@ -5,8 +5,7 @@
+ }
+ 
+ release {
+-  QMAKE_CXXFLAGS_RELEASE = -O4 -m32 -mtune=athlon-xp -march=athlon-xp -mfpmath=sse
+-  QMAKE_CXXFLAGS_RELEASE += -fstack-protector
+-  QMAKE_CXXFLAGS_RELEASE += -Wall -W -Wextra -pedantic -Wstack-protector
+-  QMAKE_CXXFLAGS_RELEASE += -Wno-long-long -Wno-overlength-strings
++  QMAKE_CXXFLAGS_RELEASE = -O4 -march=i686
++  QMAKE_CXXFLAGS_RELEASE += -Wall -W -Wextra -pedantic
++  QMAKE_CXXFLAGS_RELEASE += -Wno-long-long
+ }
