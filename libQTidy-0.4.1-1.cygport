@@ -1,0 +1,31 @@
+inherit qt4-qmake
+
+DESCRIPTION="Qt4 tidy library"
+HOMEPAGE="http://qtidy.hjcms.de/"
+SRC_URI="http://qtidy.hjcms.de/Downloads/${P}.tar.lzma"
+PATCH_URI="0.4.1-cxxflags.patch"
+
+PKG_NAMES="${PN} ${PN}0 ${PN}-devel"
+PKG_HINTS="bin dll devel"
+libQTidy_CONTENTS="etc/ usr/bin/*.exe usr/share/applications/ usr/share/doc/ usr/share/pixmaps/"
+libQTidy0_CONTENTS="usr/bin/*-0.dll usr/share/qtidy/"
+libQTidy_devel_CONTENTS="${QT4_INCLUDEDIR#/} ${QT4_LIBDIR#/} usr/lib/pkgconfig/ ${QT4_DATADIR#/}/mkspecs/"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	${S}/configure \
+		-prefix /usr \
+		-qmake-bin ${QT4_QMAKE} \
+		-release \
+		-verbose \
+		|| error "configure failed"
+	cygmake -j1
+}
+
+src_install() {
+	cd ${B}
+	qt4_qmake_install
+
+	mv ${D}/usr/lib/qt4/bin/*.exe ${D}/usr/bin/
+}
