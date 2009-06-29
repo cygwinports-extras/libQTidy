@@ -1,5 +1,5 @@
 category: Devel KDE
-requires: cygwin libQtCore4-devel libQtGui4-devel libQtNetwork4-devel libQtXml4-devel libQTidy0 libtidy-devel
+requires: libQtCore4-devel libQtGui4-devel libQtNetwork4-devel libQtXml4-devel libQTidy0 libtidy-devel
 external-source: libQTidy
 sdesc: "Qt4 Tidy bindings (libdevel)"
 ldesc: "A library and some helper programs that make it easier

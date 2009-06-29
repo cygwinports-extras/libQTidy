@@ -1,5 +1,5 @@
 category: Devel KDE
-requires: cygwin libqscintilla2_5 libQtCore4 libQtDBus4 libQtGui4 libQtNetwork4 libQtWebKit4 libQtXml4 libQTidy0
+requires: libqscintilla2_5 libQtCore4 libQtDBus4 libQtGui4 libQtNetwork4 libQtWebKit4 libQtXml4 libQTidy0
 sdesc: "Qt4 Tidy bindings (apps)"
 ldesc: "A library and some helper programs that make it easier
 to integrate Tidy in Qt Applications."
