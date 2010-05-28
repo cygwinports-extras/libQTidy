@@ -1,0 +1,14 @@
+inherit qt4-cmake
+
+DESCRIPTION="Qt4 tidy library"
+HOMEPAGE="http://qtidy.hjcms.de/"
+SRC_URI="http://qtidy.hjcms.de/Downloads/${P}.tar.lzma"
+PATCH_URI="0.8.2-cmake-install.patch"
+
+PKG_NAMES="${PN} ${PN}0 ${PN}-devel qtidy"
+qtidy_CONTENTS="etc/ usr/bin/*.exe usr/share/applications/ usr/share/doc/
+                usr/share/icons/ usr/share/pixmaps/"
+libQTidy0_CONTENTS="usr/bin/*-0.dll ${QT4_DATADIR#/}/translations/ usr/share/qtidy/"
+libQTidy_devel_CONTENTS="${QT4_INCLUDEDIR#/} usr/lib/ usr/share/cmake/ ${QT4_DATADIR#/}/mkspecs/"
+
+CYGCMAKE_ARGS="-D__CHECK_GCC_VISIBILITY=OFF -D__CHECK_GCC_FPIC=OFF"
